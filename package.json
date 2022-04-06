@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/J-Kuopus/myFlix-app#readme",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "express": "^4.17.3"
   }
 }
