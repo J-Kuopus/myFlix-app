@@ -14,6 +14,8 @@ let topMovies = [
   { title: 'Paprika', director: 'Satoshi Kon' },
 ];
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
