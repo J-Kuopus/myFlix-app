@@ -1,4 +1,6 @@
-const express = require('express');
+const express = require('express'),
+  morgan = require('morgan');
+
 const app = express();
 
 let topMovies = [
