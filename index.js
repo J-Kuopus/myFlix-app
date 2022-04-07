@@ -7,12 +7,11 @@ const express = require('express'),
   path = require('path');
 
 const app = express();
+
 // Creates write stream (in append mode)
-const accessLogStream = fs.createWriteStream(path.join(_dirname, 'log.txt'), {
+const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
 });
-
-app.use(morgan('combined', { stream: accessLogStream }));
 
 let topMovies = [
   { title: 'The Wizard of Oz', director: 'Victor Fleming' },
@@ -26,6 +25,9 @@ let topMovies = [
   { title: 'Prince of Darkness', director: 'John Carpenter' },
   { title: 'Paprika', director: 'Satoshi Kon' },
 ];
+
+// Sets up logger
+app.use(morgan('combined', { stream: accessLogStream }));
 
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
