@@ -12,6 +12,8 @@ const accessLogStream = fs.createWriteStream(path.join(_dirname, 'log.txt'), {
   flags: 'a',
 });
 
+app.use(morgan('combined', { stream: accessLogStream }));
+
 let topMovies = [
   { title: 'The Wizard of Oz', director: 'Victor Fleming' },
   { title: 'Willy Wonka & the Chocolate Factory', director: 'Mel Stuart' },
