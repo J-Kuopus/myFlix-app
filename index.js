@@ -1,7 +1,10 @@
 // Imports Express framework
 const express = require('express'),
   // Imports Morgan library
-  morgan = require('morgan');
+  morgan = require('morgan'),
+  // Imports built-in node modules for fs and path
+  fs = require('fs'),
+  path = require('path');
 
 const app = express();
 
