@@ -1,4 +1,6 @@
+// Imports Express framework
 const express = require('express'),
+  // Imports Morgan library
   morgan = require('morgan');
 
 const app = express();
