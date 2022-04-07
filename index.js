@@ -7,6 +7,10 @@ const express = require('express'),
   path = require('path');
 
 const app = express();
+// Creates write stream (in append mode)
+const accessLogStream = fs.createWriteStream(path.join(_dirname, 'log.txt'), {
+  flags: 'a',
+});
 
 let topMovies = [
   { title: 'The Wizard of Oz', director: 'Victor Fleming' },
