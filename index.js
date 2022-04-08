@@ -30,6 +30,12 @@ let topMovies = [
 // Sets up logger
 app.use(morgan('combined', { stream: accessLogStream }));
 
+// Uses Morgan's logging methods
+app.use(morgan('common'));
+
+// Accesses all files in "public" folder
+app.use(express.static('public'));
+
 // GETS index.html page
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
@@ -39,12 +45,6 @@ app.get('/', (req, res) => {
 app.get('/movies', (req, res) => {
   res.json(topMovies);
 });
-
-// Accesses all files in "public" folder
-app.use(express.static('public'));
-
-// Uses Morgan's logging methods
-app.use(morgan('common'));
 
 // Error-handling function
 app.use((err, req, res, next) => {
