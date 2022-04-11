@@ -21,16 +21,16 @@ const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
 let users = [];
 // Movie list array
 let movies = [
-  { title: 'The Wizard of Oz', director: 'Victor Fleming' },
-  { title: 'Willy Wonka & the Chocolate Factory', director: 'Mel Stuart' },
-  { title: 'Dawn of the Dead', director: 'George A. Romero' },
-  { title: 'Videodrome', director: 'David Cronenberg' },
-  { title: 'Phantasm', director: 'Don Coscarelli' },
-  { title: 'Phenomena', director: 'Dario Argento' },
-  { title: 'City of the Living Dead', director: 'Lucio Fulci' },
-  { title: 'Hellraiser', director: 'Clive Barker' },
-  { title: 'Prince of Darkness', director: 'John Carpenter' },
-  { title: 'Paprika', director: 'Satoshi Kon' },
+  { Title: 'The Wizard of Oz', Director: 'Victor Fleming' },
+  { Title: 'Willy Wonka & the Chocolate Factory', Director: 'Mel Stuart' },
+  { Title: 'Dawn of the Dead', Director: 'George A. Romero' },
+  { Title: 'Videodrome', Director: 'David Cronenberg' },
+  { Title: 'Phantasm', Director: 'Don Coscarelli' },
+  { Title: 'Phenomena', Director: 'Dario Argento' },
+  { Title: 'City of the Living Dead', Director: 'Lucio Fulci' },
+  { Title: 'Hellraiser', Director: 'Clive Barker' },
+  { Title: 'Prince of Darkness', Director: 'John Carpenter' },
+  { Title: 'Paprika', Director: 'Satoshi Kon' },
 ];
 
 // Sets up logger
