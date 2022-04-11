@@ -128,16 +128,16 @@ app.use(express.static('public'));
 // Accesses body-parser
 app.use(bodyParser.json());
 
-// GETS index.html page
+// READS index.html page
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
 
-// GETS and returns movie array in JSON format
+// READS and returns movie array in JSON format
 app.get('/movies', (req, res) => {
   res.status(200).json(movies);
 });
-// GETS and returns details about movie in JSON format
+// READS and returns details about movie in JSON format
 app.get('/movies/:title', (req, res) => {
   const { title } = req.params;
   const movie = movies.find((movie) => movie.Title === title);
@@ -148,7 +148,7 @@ app.get('/movies/:title', (req, res) => {
     res.status(400).send('This movie was not found.');
   }
 });
-// GETS and returns details about movie genres in JSON format
+// READS and returns details about movie genres in JSON format
 app.get('/movies/genre/:genreName', (req, res) => {
   const { genreName } = req.params;
   const genre = movies.find((movie) => movie.Genre.Name === genreName).Genre;
@@ -159,7 +159,7 @@ app.get('/movies/genre/:genreName', (req, res) => {
     res.status(400).send('This genre was not found.');
   }
 });
-// GETS and returns movie directors by name in JSON format
+// READS and returns movie directors by name in JSON format
 app.get('/movies/directors/:directorName', (req, res) => {
   const { directorName } = req.params;
   const director = movies.find(
