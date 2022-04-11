@@ -57,6 +57,10 @@ app.get('/movies/[data]', (req, res) => {
   res.json(movieData);
 });
 
+app.get('/movies/genres/[genre-name]', (req, res) => {
+  res.json(movieGenres);
+});
+
 // Error-handling function
 app.use((err, req, res, next) => {
   console.error(err.stack);
