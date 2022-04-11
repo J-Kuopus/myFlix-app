@@ -181,8 +181,7 @@ app.post('/users', (req, res) => {
     users.push(newUser);
     res.status(201).json(newUser);
   } else {
-    const message = 'Missing name in request body';
-    res.status(400).send(message);
+    res.status(400).send('Users need names!');
   }
 });
 // Allows users to update username
