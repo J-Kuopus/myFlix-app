@@ -223,7 +223,7 @@ app.delete('/users/:id/:movieTitle', (req, res) => {
     );
     res
       .status(200)
-      .send(`${movieName} has been removed from user ${id}'s array`);
+      .send(`${movieTitle} has been removed from user ${id}'s array`);
   } else {
     res.status(400).send('No such user exists.');
   }
