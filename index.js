@@ -208,7 +208,7 @@ app.post('/users/:id/:movieTitle', (req, res) => {
     user.favoriteMovies.push(movieTitle);
     res.status(200).json(user);
   } else {
-    res.status(400).send('No such user exists.');
+    res.status(400).send(`${movieName} has been added to user ${id}'s array`);
   }
 });
 // Allows users to remove movie from favorites list
