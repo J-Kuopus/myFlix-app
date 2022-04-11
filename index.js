@@ -211,11 +211,6 @@ app.post('/users/:id/:movieTitle', (req, res) => {
     res.status(400).send(`${movieName} has been added to user ${id}'s array`);
   }
 });
-// Allows users to remove movie from favorites list
-app.delete('/users/favorites', (req, res) => {
-  const message = 'You deleted this movie from your favorites.';
-  res.status(204).send(message);
-});
 
 // Allows users to deregister (delete their profile)
 app.delete('users/:id', (req, res) => {
