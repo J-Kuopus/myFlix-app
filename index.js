@@ -77,6 +77,8 @@ app.post('/users', (req, res) => {
     res.status(201).send(newUser);
   }
 });
+// Allows users to update username
+app.put('/users/[username]', (req, res) => {});
 
 // Error-handling function
 app.use((err, req, res, next) => {
