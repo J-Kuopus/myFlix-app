@@ -29,3 +29,5 @@ Timestamp: Tue Apr 05 2022 13:49:10 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [11/Apr/2022:11:06:52 +0000] "POST /users HTTP/1.1" 201 82 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Apr/2022:11:20:32 +0000] "PUT /users/1 HTTP/1.1" 200 81 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Apr/2022:11:32:26 +0000] "POST /users/2/Phenomena HTTP/1.1" 200 53 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:11:39:12 +0000] "POST /users/2/Phenomena HTTP/1.1" 200 53 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:11:39:37 +0000] "POST /users/2/Phenomena HTTP/1.1" 200 65 "-" "PostmanRuntime/7.29.0"
