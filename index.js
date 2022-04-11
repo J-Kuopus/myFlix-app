@@ -53,6 +53,10 @@ app.get('/movies', (req, res) => {
   res.json(topMovies);
 });
 
+app.get('/movies/[data]', (req, res) => {
+  res.json(movieData);
+});
+
 // Error-handling function
 app.use((err, req, res, next) => {
   console.error(err.stack);
