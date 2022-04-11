@@ -39,3 +39,5 @@ Timestamp: Tue Apr 05 2022 13:49:10 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [11/Apr/2022:12:02:40 +0000] "POST /users/2/Phantasm HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Apr/2022:12:03:09 +0000] "POST /users/1/Videodrome HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Apr/2022:12:06:16 +0000] "POST /users/2/Videodrome HTTP/1.1" 200 54 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:12:13:51 +0000] "POST /users/2/Phenomena HTTP/1.1" 200 42 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:12:16:19 +0000] "DELETE /users/2/Phenomena HTTP/1.1" 200 46 "-" "PostmanRuntime/7.29.0"
