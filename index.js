@@ -18,7 +18,10 @@ const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
 });
 
 // User list array
-let users = [];
+let users = [
+  { id: 1, name: 'Malakai', favoriteMovies: ['Phantasm', 'Hellraiser'] },
+  { id: 2, name: 'Lucy', favoriteMovies: ['Paprika', 'Phenomena'] },
+];
 // Movie list array
 let movies = [
   {
