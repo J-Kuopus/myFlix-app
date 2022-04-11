@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
 
 // GETS and returns movie array in JSON format
 app.get('/movies', (req, res) => {
-  res.json(movies);
+  res.status(200).json(movies);
 });
 // GETS and returns details about movie in JSON format
 app.get('/movies/[data]', (req, res) => {
