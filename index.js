@@ -55,7 +55,8 @@ app.get('/movies', (req, res) => {
   res.status(200).json(movies);
 });
 // GETS and returns details about movie in JSON format
-app.get('/movies/[data]', (req, res) => {
+app.get('/movies/:title', (req, res) => {
+  const { title } = req.params;
   res.json(movieData);
 });
 // GETS and returns info about movie genre by genre name in JSON format
