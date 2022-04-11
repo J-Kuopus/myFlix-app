@@ -95,6 +95,19 @@ app.delete('/users/favorites', (req, res) => {
   res.status(204).send(message);
 });
 
+// Allows users to Deregister (delete their profile)
+app.delete('users/:id', (req, res) => {
+  let user = users.find((user) => {
+    return user.id === req.params.id;
+  });
+  if (user) {
+    users = users.filter((obj) => {
+      return obj.id !== req.params.id;
+    });
+    res.status(201).send('User ' + req.params.id + ' was deleted.');
+  }
+});
+
 // Error-handling function
 app.use((err, req, res, next) => {
   console.error(err.stack);
