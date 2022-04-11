@@ -57,7 +57,13 @@ app.get('/movies', (req, res) => {
 // GETS and returns details about movie in JSON format
 app.get('/movies/:title', (req, res) => {
   const { title } = req.params;
-  res.json(movieData);
+  const movie = movies.find((movie) => movie.Title === title);
+
+  if (movie) {
+    res.status(200).json(movie);
+  } else {
+    res.status(400).send('This movie was not found.');
+  }
 });
 // GETS and returns info about movie genre by genre name in JSON format
 app.get('/movies/genres/[genre-name]', (req, res) => {
