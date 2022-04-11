@@ -157,9 +157,7 @@ app.get('/movies/genre/:genreName', (req, res) => {
   }
 });
 // GETS and returns movie directors by name in JSON format
-app.get('/directors/[name]', (req, res) => {
-  res.json(directors);
-});
+
 // Allows new users to register
 app.post('/users', (req, res) => {
   let newUser = req.body;
