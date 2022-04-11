@@ -211,7 +211,23 @@ app.post('/users/:id/:movieTitle', (req, res) => {
     res.status(400).send(`${movieName} has been added to user ${id}'s array`);
   }
 });
+// DELETE, allows users to delete favorites
+app.delete('/users/:id/:movieTitle', (req, res) => {
+  const { id, movieTitle } = req.params;
 
+  let user = users.find((user) => user.id == id);
+
+  if (user) {
+    user.favoriteMovies = user.favoriteMovies.filter(
+      (title) => title !== movieTitle
+    );
+    res
+      .status(200)
+      .send(`${movieName} has been removed from user ${id}'s array`);
+  } else {
+    res.status(400).send('No such user exists.');
+  }
+});
 // Allows users to deregister (delete their profile)
 app.delete('users/:id', (req, res) => {
   let user = users.find((user) => {
