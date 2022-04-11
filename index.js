@@ -145,10 +145,7 @@ app.get('/movies/:title', (req, res) => {
     res.status(400).send('This movie was not found.');
   }
 });
-// GETS and returns info about movie genre by genre name in JSON format
-app.get('/movies/genres/[genre-name]', (req, res) => {
-  res.json(movieGenres);
-});
+
 // GETS and returns movie directors by name in JSON format
 app.get('/directors/[name]', (req, res) => {
   res.json(directors);
