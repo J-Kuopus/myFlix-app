@@ -23,7 +23,7 @@ let users = [];
 let movies = [
   {
     Title: 'The Wizard of Oz',
-    Director: 'Victor Fleming',
+    Director: { Name: 'Victor Fleming' },
     Genre: {
       Name: 'Fantasy',
       Description:
@@ -32,7 +32,7 @@ let movies = [
   },
   {
     Title: 'Willy Wonka & the Chocolate Factory',
-    Director: 'Mel Stuart',
+    Director: { Name: 'Mel Stuart' },
     Genre: {
       Name: 'Fantasy',
       Description:
@@ -41,7 +41,7 @@ let movies = [
   },
   {
     Title: 'Dawn of the Dead',
-    Director: 'George A. Romero',
+    Director: { Name: 'George A. Romero' },
     Genre: {
       Name: 'Horror',
       Description:
@@ -50,7 +50,7 @@ let movies = [
   },
   {
     Title: 'Videodrome',
-    Director: 'David Cronenberg',
+    Director: { Name: 'David Cronenberg' },
     Genre: {
       Name: 'Horror',
       Description:
@@ -59,7 +59,7 @@ let movies = [
   },
   {
     Title: 'Phantasm',
-    Director: 'Don Coscarelli',
+    Director: { Name: 'Don Coscarelli' },
     Genre: {
       Name: 'Horror',
       Description:
@@ -68,7 +68,7 @@ let movies = [
   },
   {
     Title: 'Phenomena',
-    Director: 'Dario Argento',
+    Director: { Name: 'Dario Argento' },
     Genre: {
       Name: 'Horror',
       Description:
@@ -77,7 +77,7 @@ let movies = [
   },
   {
     Title: 'City of the Living Dead',
-    Director: 'Lucio Fulci',
+    Director: { Name: 'Lucio Fulci' },
     Genre: {
       Name: 'Horror',
       Description:
@@ -86,7 +86,7 @@ let movies = [
   },
   {
     Title: 'Hellraiser',
-    Director: 'Clive Barker',
+    Director: { Name: 'Clive Barker' },
     Genre: {
       Name: 'Horror',
       Description:
@@ -95,7 +95,7 @@ let movies = [
   },
   {
     Title: 'Prince of Darkness',
-    Director: 'John Carpenter',
+    Director: { Name: 'John Carpenter' },
     Genre: {
       Name: 'Horror',
       Description:
@@ -104,7 +104,7 @@ let movies = [
   },
   {
     Title: 'Paprika',
-    Director: 'Satoshi Kon',
+    Director: { Name: 'Satoshi Kon' },
     Genre: {
       Name: 'Fantasy',
       Description:
