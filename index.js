@@ -174,7 +174,7 @@ app.get('/movies/directors/:directorName', (req, res) => {
 });
 // CREATE, allows new users to register
 app.post('/users', (req, res) => {
-  let newUser = req.body;
+  const newUser = req.body;
 
   if (!newUser.name) {
     const message = 'Missing name in request body';
