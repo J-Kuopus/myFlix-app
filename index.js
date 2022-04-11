@@ -198,11 +198,6 @@ app.put('/users/:id', (req, res) => {
     res.status(400).send('No such user exists.');
   }
 });
-// Allows users to add a movie to favorites list
-app.put('/users/favorites', (req, res) => {
-  const message = 'You added this movie to your favorites.';
-  res.status(200).send(message);
-});
 
 // Allows users to remove movie from favorites list
 app.delete('/users/favorites', (req, res) => {
