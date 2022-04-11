@@ -17,6 +17,8 @@ const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
 });
 
+// User list array
+let users = [];
 // Movie list array
 let movies = [
   { title: 'The Wizard of Oz', director: 'Victor Fleming' },
