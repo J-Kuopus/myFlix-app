@@ -17,3 +17,8 @@ Timestamp: Tue Apr 05 2022 13:49:10 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [11/Apr/2022:08:10:02 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
 ::1 - - [11/Apr/2022:08:10:03 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/movies" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
 ::1 - - [11/Apr/2022:08:22:37 +0000] "GET /movies HTTP/1.1" 200 554 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:08:46:50 +0000] "GET /movies/The%20Wizard%20of%20Oz HTTP/1.1" 400 25 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:08:47:46 +0000] "GET /movies/Videodrome HTTP/1.1" 400 25 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:08:48:45 +0000] "GET /movies/Videodrome HTTP/1.1" 200 52 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:08:50:25 +0000] "GET /movies/Videodrome HTTP/1.1" 200 52 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:08:51:49 +0000] "GET /movies HTTP/1.1" 200 554 "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
