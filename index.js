@@ -80,6 +80,9 @@ app.post('/users', (req, res) => {
 // Allows users to update username
 app.put('/users/[username]', (req, res) => {});
 
+//Allows users to add a movie to favorites list
+app.put('/users/favorites', (req, res) => {});
+
 // Error-handling function
 app.use((err, req, res, next) => {
   console.error(err.stack);
