@@ -5,7 +5,7 @@ const express = require('express'),
   // Imports built-in node modules for fs and path
   fs = require('fs'),
   path = require('path');
-
+// Defines app variable that accesses Express functions
 const app = express();
 
 // Creates write stream (in append mode)
