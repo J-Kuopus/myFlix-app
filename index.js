@@ -21,16 +21,96 @@ const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
 let users = [];
 // Movie list array
 let movies = [
-  { Title: 'The Wizard of Oz', Director: 'Victor Fleming' },
-  { Title: 'Willy Wonka & the Chocolate Factory', Director: 'Mel Stuart' },
-  { Title: 'Dawn of the Dead', Director: 'George A. Romero' },
-  { Title: 'Videodrome', Director: 'David Cronenberg' },
-  { Title: 'Phantasm', Director: 'Don Coscarelli' },
-  { Title: 'Phenomena', Director: 'Dario Argento' },
-  { Title: 'City of the Living Dead', Director: 'Lucio Fulci' },
-  { Title: 'Hellraiser', Director: 'Clive Barker' },
-  { Title: 'Prince of Darkness', Director: 'John Carpenter' },
-  { Title: 'Paprika', Director: 'Satoshi Kon' },
+  {
+    Title: 'The Wizard of Oz',
+    Director: 'Victor Fleming',
+    Genre: {
+      Name: 'Fantasy',
+      Description:
+        'The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws.',
+    },
+  },
+  {
+    Title: 'Willy Wonka & the Chocolate Factory',
+    Director: 'Mel Stuart',
+    Genre: {
+      Name: 'Fantasy',
+      Description:
+        'The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws.',
+    },
+  },
+  {
+    Title: 'Dawn of the Dead',
+    Director: 'George A. Romero',
+    Genre: {
+      Name: 'Horror',
+      Description:
+        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
+    },
+  },
+  {
+    Title: 'Videodrome',
+    Director: 'David Cronenberg',
+    Genre: {
+      Name: 'Horror',
+      Description:
+        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
+    },
+  },
+  {
+    Title: 'Phantasm',
+    Director: 'Don Coscarelli',
+    Genre: {
+      Name: 'Horror',
+      Description:
+        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
+    },
+  },
+  {
+    Title: 'Phenomena',
+    Director: 'Dario Argento',
+    Genre: {
+      Name: 'Horror',
+      Description:
+        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
+    },
+  },
+  {
+    Title: 'City of the Living Dead',
+    Director: 'Lucio Fulci',
+    Genre: {
+      Name: 'Horror',
+      Description:
+        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
+    },
+  },
+  {
+    Title: 'Hellraiser',
+    Director: 'Clive Barker',
+    Genre: {
+      Name: 'Horror',
+      Description:
+        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
+    },
+  },
+  {
+    Title: 'Prince of Darkness',
+    Director: 'John Carpenter',
+    Genre: {
+      Name: 'Horror',
+      Description:
+        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
+    },
+  },
+  {
+    Title: 'Paprika',
+    Director: 'Satoshi Kon',
+    Genre: {
+      Name: 'Fantasy',
+      Description:
+        'The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws.',
+    },
+  },
 ];
 
 // Sets up logger
