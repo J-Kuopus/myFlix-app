@@ -60,6 +60,10 @@ app.get('/movies/[data]', (req, res) => {
 app.get('/movies/genres/[genre-name]', (req, res) => {
   res.json(movieGenres);
 });
+// GETS and returns movie directors by name in JSON format
+app.get('/directors/[name]', (req, res) => {
+  res.json(directors);
+});
 
 // Error-handling function
 app.use((err, req, res, next) => {
