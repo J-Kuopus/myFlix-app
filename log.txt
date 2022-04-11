@@ -25,3 +25,4 @@ Timestamp: Tue Apr 05 2022 13:49:10 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [11/Apr/2022:09:25:54 +0000] "GET /movies/genre/Fantasy HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Apr/2022:09:27:31 +0000] "GET /movies/genre/Fantasy HTTP/1.1" 200 165 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Apr/2022:10:33:40 +0000] "GET /movies/directors/David%20Cronenberg HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Apr/2022:10:39:32 +0000] "GET /movies/directors/David%20Cronenberg HTTP/1.1" 200 27 "-" "PostmanRuntime/7.29.0"
