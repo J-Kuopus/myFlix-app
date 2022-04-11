@@ -52,11 +52,11 @@ app.get('/', (req, res) => {
 app.get('/movies', (req, res) => {
   res.json(topMovies);
 });
-// GETS and returns details about movie
+// GETS and returns details about movie in JSON format
 app.get('/movies/[data]', (req, res) => {
   res.json(movieData);
 });
-// GETS and returns info about movie genre by genre name
+// GETS and returns info about movie genre by genre name in JSON format
 app.get('/movies/genres/[genre-name]', (req, res) => {
   res.json(movieGenres);
 });
