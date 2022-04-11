@@ -172,7 +172,7 @@ app.get('/movies/directors/:directorName', (req, res) => {
     res.status(400).send('This director was not found.');
   }
 });
-// Allows new users to register
+// CREATE, allows new users to register
 app.post('/users', (req, res) => {
   let newUser = req.body;
 
