@@ -228,7 +228,7 @@ app.delete('/users/:id/:movieTitle', (req, res) => {
     res.status(400).send('No such user exists.');
   }
 });
-// Allows users to deregister (delete their profile)
+// DELETE, allows users to deregister (delete their profile)
 app.delete('users/:id', (req, res) => {
   let user = users.find((user) => {
     return user.id === req.params.id;
