@@ -145,7 +145,17 @@ app.get('/movies/:title', (req, res) => {
     res.status(400).send('This movie was not found.');
   }
 });
+// GETS and returns details about movie genres in JSON format
+app.get('/movies/genre/:genreName', (req, res) => {
+  const { genreName } = req.params;
+  const genre = movies.find((movie) => movie.Genre.Name === genreName).Genre;
 
+  if (genre) {
+    res.status(200).json(genre);
+  } else {
+    res.status(400).send('This genre was not found.');
+  }
+});
 // GETS and returns movie directors by name in JSON format
 app.get('/directors/[name]', (req, res) => {
   res.json(directors);
