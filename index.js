@@ -12,6 +12,9 @@ const express = require('express'),
 // Defines app variable that accesses Express functions
 const app = express();
 
+// Accesses body-parser
+app.use(bodyParser.json());
+
 // Creates write stream (in append mode)
 const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
