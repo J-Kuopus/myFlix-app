@@ -184,7 +184,20 @@ app.post('/users', (req, res) => {
     res.status(400).send('Users need names!');
   }
 });
+// UPDATE, allows users to update username
+app.put('/users/:id', (req, res) => {
+  const { id } = req.params;
+  const updatedUser = req.body;
 
+  let user = users.find((user) => user.id == id);
+
+  if (user) {
+    user.name = updatedUser.name;
+    res.status(200).json(user);
+  } else {
+    res.status(400).send('No such user exists.');
+  }
+});
 // Allows users to add a movie to favorites list
 app.put('/users/favorites', (req, res) => {
   const message = 'You added this movie to your favorites.';
