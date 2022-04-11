@@ -176,7 +176,7 @@ app.get('/movies/directors/:directorName', (req, res) => {
 app.post('/users', (req, res) => {
   const newUser = req.body;
 
-  if (!newUser.name) {
+  if (newUser.name) {
     const message = 'Missing name in request body';
     res.status(400).send(message);
   } else {
