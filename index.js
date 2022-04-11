@@ -84,7 +84,10 @@ app.put('/users/[username]', (req, res) => {
 });
 
 //Allows users to add a movie to favorites list
-app.put('/users/favorites', (req, res) => {});
+app.put('/users/favorites', (req, res) => {
+  const message = 'You added this movie to your favorites.';
+  res.status(200).send(message);
+});
 
 // Error-handling function
 app.use((err, req, res, next) => {
