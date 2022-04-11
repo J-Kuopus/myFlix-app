@@ -182,7 +182,7 @@ app.post('/users', (req, res) => {
   } else {
     newUser.id = uuid.v4();
     users.push(newUser);
-    res.status(201).send(newUser);
+    res.status(201).json(newUser);
   }
 });
 // Allows users to update username
