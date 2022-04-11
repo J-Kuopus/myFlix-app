@@ -78,7 +78,10 @@ app.post('/users', (req, res) => {
   }
 });
 // Allows users to update username
-app.put('/users/[username]', (req, res) => {});
+app.put('/users/[username]', (req, res) => {
+  const message = 'You updated your user name.';
+  res.status(200).send(message);
+});
 
 //Allows users to add a movie to favorites list
 app.put('/users/favorites', (req, res) => {});
