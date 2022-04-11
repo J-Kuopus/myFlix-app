@@ -12,9 +12,6 @@ const express = require('express'),
 // Defines app variable that accesses Express functions
 const app = express();
 
-// Accesses body-parser
-app.use(bodyParser.json());
-
 // Creates write stream (in append mode)
 const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
@@ -42,6 +39,9 @@ app.use(morgan('common'));
 
 // Accesses all files in "public" folder
 app.use(express.static('public'));
+
+// Accesses body-parser
+app.use(bodyParser.json());
 
 // GETS index.html page
 app.get('/', (req, res) => {
