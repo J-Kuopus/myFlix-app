@@ -18,7 +18,7 @@ const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
 });
 
 // Movie list array
-let topMovies = [
+let movies = [
   { title: 'The Wizard of Oz', director: 'Victor Fleming' },
   { title: 'Willy Wonka & the Chocolate Factory', director: 'Mel Stuart' },
   { title: 'Dawn of the Dead', director: 'George A. Romero' },
@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 
 // GETS and returns movie array in JSON format
 app.get('/movies', (req, res) => {
-  res.json(topMovies);
+  res.json(movies);
 });
 // GETS and returns details about movie in JSON format
 app.get('/movies/[data]', (req, res) => {
