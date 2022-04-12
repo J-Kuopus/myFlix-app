@@ -199,7 +199,7 @@ app.put('/users/:userId', (req, res) => {
   }
 });
 // UPDATE, allows users to add favorites
-app.put('/users/:id/:movieTitle', (req, res) => {
+app.put('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
   const { id, movieTitle } = req.params;
 
   let user = users.find((user) => user.id == id);
