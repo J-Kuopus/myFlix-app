@@ -177,7 +177,7 @@ app.post('/users', (req, res) => {
   const newUser = req.body;
 
   if (newUser.name) {
-    newUser.id = uuid.v4();
+    newUser.userId = uuid.v4();
     users.push(newUser);
     res.status(201).json(newUser);
   } else {
