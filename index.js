@@ -198,7 +198,7 @@ app.put('/users/:userId', (req, res) => {
     res.status(400).send('No such user exists.');
   }
 });
-// UPDATE, allows users to add favorites
+// UPDATE, allows users to add movies to favorites list
 app.put('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
   const { userId, movieTitle } = req.params;
 
