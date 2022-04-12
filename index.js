@@ -208,7 +208,7 @@ app.put('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
     user.favoriteMovies.push(movieTitle);
     res
       .status(200)
-      .send(`${movieTitle} has been added to user ${userId}'s array`);
+      .send(`${movieTitle} has been added to user ${userId}'s favorites list`);
   } else {
     res.status(400).send('No such user exists.');
   }
