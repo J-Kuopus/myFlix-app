@@ -233,14 +233,14 @@ app.delete('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
   }
 });
 // DELETE, allows users to deregister (delete their profile)
-app.delete('/users/:id', (req, res) => {
-  const { id } = req.params;
+app.delete('/users/:userId', (req, res) => {
+  const { userId } = req.params;
 
-  let user = users.find((user) => user.id == id);
+  let user = users.find((user) => user.userId == userId);
 
   if (user) {
-    users = users.filter((user) => user.id != id);
-    res.status(200).send(`User ${id} has been deleted`);
+    users = users.filter((user) => user.userId != userId);
+    res.status(200).send(`User ${userId} has been deleted`);
   } else {
     res.status(400).send('No such user exists.');
   }
