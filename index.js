@@ -225,7 +225,9 @@ app.delete('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
     );
     res
       .status(200)
-      .send(`${movieTitle} has been removed from user ${userId}'s array`);
+      .send(
+        `${movieTitle} has been removed from user ${userId}'s favorites list`
+      );
   } else {
     res.status(400).send('No such user exists.');
   }
