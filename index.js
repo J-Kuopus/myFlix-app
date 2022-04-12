@@ -198,8 +198,8 @@ app.put('/users/:id', (req, res) => {
     res.status(400).send('No such user exists.');
   }
 });
-// CREATE, allows users to add favorites
-app.post('/users/:id/:movieTitle', (req, res) => {
+// UPDATE, allows users to add favorites
+app.put('/users/:id/:movieTitle', (req, res) => {
   const { id, movieTitle } = req.params;
 
   let user = users.find((user) => user.id == id);
