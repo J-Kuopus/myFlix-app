@@ -19,8 +19,8 @@ const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
 
 // User list array
 let users = [
-  { id: 1, name: 'Malakai', favoriteMovies: ['Phantasm', 'Hellraiser'] },
-  { id: 2, name: 'Lucy', favoriteMovies: [] },
+  { userId: 1, name: 'Malakai', favoriteMovies: ['Phantasm', 'Hellraiser'] },
+  { userId: 2, name: 'Lucy', favoriteMovies: [] },
 ];
 // Movie list array
 let movies = [
@@ -185,11 +185,11 @@ app.post('/users', (req, res) => {
   }
 });
 // UPDATE, allows users to update username
-app.put('/users/:id', (req, res) => {
-  const { id } = req.params;
+app.put('/users/:userId', (req, res) => {
+  const { userId } = req.params;
   const updatedUser = req.body;
 
-  let user = users.find((user) => user.id == id);
+  let user = users.find((user) => user.userId == userId);
 
   if (user) {
     user.name = updatedUser.name;
