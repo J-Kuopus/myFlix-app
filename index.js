@@ -200,13 +200,15 @@ app.put('/users/:userId', (req, res) => {
 });
 // UPDATE, allows users to add favorites
 app.put('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
-  const { id, movieTitle } = req.params;
+  const { userId, movieTitle } = req.params;
 
-  let user = users.find((user) => user.id == id);
+  let user = users.find((user) => user.userId == userId);
 
   if (user) {
     user.favoriteMovies.push(movieTitle);
-    res.status(200).send(`${movieTitle} has been added to user ${id}'s array`);
+    res
+      .status(200)
+      .send(`${movieTitle} has been added to user ${userId}'s array`);
   } else {
     res.status(400).send('No such user exists.');
   }
