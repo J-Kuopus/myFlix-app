@@ -182,17 +182,7 @@ app.get('/movies/directors/:directorName', (req, res) => {
   }
 });
 // CREATE, allows new users to register
-app.post('/users', (req, res) => {
-  const newUser = req.body;
 
-  if (newUser.name) {
-    newUser.userId = uuid.v4();
-    users.push(newUser);
-    res.status(201).json(newUser);
-  } else {
-    res.status(400).send('Users need names!');
-  }
-});
 // UPDATE, allows users to update username
 app.put('/users/:userId', (req, res) => {
   const { userId } = req.params;
