@@ -182,7 +182,31 @@ app.get('/movies/directors/:directorName', (req, res) => {
   }
 });
 // CREATE, allows new users to register
-
+app.post('/users', (req, res) => {
+  Users.findOne({ Username: req.body.Username })
+  .then((user) => {
+    if (user) {
+      return res.status(400).send(req.body.Username + ' already exists');
+    } else {
+      Users
+      .create({
+        Username: req.body.Username,
+        Password: req.body.Password,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday
+      })
+      .then((user) => {res.status(201).json(user)})
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send('Error: ' + error);
+      })
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+    res.status(500).send('Error: ' + error);
+  });
+});
 // UPDATE, allows users to update username
 app.put('/users/:userId', (req, res) => {
   const { userId } = req.params;
