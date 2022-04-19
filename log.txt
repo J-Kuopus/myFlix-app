@@ -64,3 +64,6 @@ Timestamp: Tue Apr 05 2022 13:49:10 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [12/Apr/2022:05:52:18 +0000] "PUT /users/2/favoriteMovies/Phantasm HTTP/1.1" 200 50 "-" "PostmanRuntime/7.29.0"
 ::1 - - [12/Apr/2022:06:01:35 +0000] "DELETE /users/1/favoriteMovies/Phantasm HTTP/1.1" 200 54 "-" "PostmanRuntime/7.29.0"
 ::1 - - [12/Apr/2022:06:06:38 +0000] "DELETE /users/2 HTTP/1.1" 200 23 "-" "PostmanRuntime/7.29.0"
+::1 - - [12/Apr/2022:06:22:02 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+::1 - - [12/Apr/2022:06:22:03 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+::1 - - [12/Apr/2022:06:22:18 +0000] "GET /movies/Phantasm HTTP/1.1" 200 203 "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
