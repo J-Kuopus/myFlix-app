@@ -208,19 +208,7 @@ app.post('/users', (req, res) => {
   });
 });
 // UPDATE, allows users to update username
-app.put('/users/:userId', (req, res) => {
-  const { userId } = req.params;
-  const updatedUser = req.body;
 
-  let user = users.find((user) => user.userId == userId);
-
-  if (user) {
-    user.name = updatedUser.name;
-    res.status(200).json(user);
-  } else {
-    res.status(400).send('No such user exists.');
-  }
-});
 // UPDATE, allows users to add movies to favorites list
 app.put('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
   const { userId, movieTitle } = req.params;
