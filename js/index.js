@@ -1,3 +1,10 @@
+// Imports Mongoose package
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+// Imports Mongoose Models
+const Movies = Models.Movie;
+const Users = Models.User;
+
 // Imports Express framework
 const express = require('express'),
   // Imports Morgan library
