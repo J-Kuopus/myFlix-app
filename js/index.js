@@ -4,6 +4,8 @@ const Models = require('./models.js');
 // Imports Mongoose Models
 const Movies = Models.Movie;
 const Users = Models.User;
+// Connects Mongooose to database for CRUD operations
+mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
 
 // Imports Express framework
 const express = require('express'),
