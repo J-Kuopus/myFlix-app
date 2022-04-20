@@ -5,7 +5,7 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 const Genres = Models.Genre;
-const Directors = Models.Directors;
+const Directors = Models.Director;
 
 // Connects Mongooose to database for CRUD operations
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
@@ -181,6 +181,17 @@ app.get('/genre/:Name', (req, res) => {
   });
 });
 
+// READS and returns info about ONE director by name in JSON format
+app.get('/director/:Name', (req, res) => {
+  Directors.findOne({ Name: req.params.Name })
+  .then((director) => {
+  res.status(200).json(director);
+  })
+  .catch((err) => {
+  console.error(err);
+  res.status(500).send('Error; ' + err);
+  });
+});
 
 // CREATE, allows new users to register
 app.post('/users', (req, res) => {
@@ -262,19 +273,7 @@ app.delete('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
     res.status(400).send('No such user exists.');
   }
 });
-// DELETE, allows users to deregister (delete their profile)
-app.delete('/users/:userId', (req, res) => {
-  const { userId } = req.params;
 
-  let user = users.find((user) => user.userId == userId);
-
-  if (user) {
-    users = users.filter((user) => user.userId != userId);
-    res.status(200).send(`User ${userId} has been deleted`);
-  } else {
-    res.status(400).send('No such user exists.');
-  }
-});
 // Error-handling function
 app.use((err, req, res, next) => {
   console.error(err.stack);
