@@ -28,7 +28,16 @@
         <td>/movies</td>
         <td>GET</td>
         <td>None</td>
-        <td>A JSON object holding data about all the movies</td>
+        <td>A JSON object holding data about all the movies, Example: {
+          "Title": "The Wizard of Oz",
+          "Director": {
+              "Name": "Victor Fleming"
+          },
+          "Genre": {
+              "Name": "Fantasy",
+              "Description": "The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws."
+          }
+      }</td>
       </tr>
       <tr>
         <td>Returns data about a single movie to the user</td>
