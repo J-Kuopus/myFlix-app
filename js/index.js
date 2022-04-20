@@ -181,19 +181,7 @@ app.get('/genre/:Name', (req, res) => {
   });
 });
 
-// READS and returns movie directors by name in JSON format
-app.get('/movies/directors/:directorName', (req, res) => {
-  const { directorName } = req.params;
-  const director = movies.find(
-    (movie) => movie.Director.Name === directorName
-  ).Director;
 
-  if (director) {
-    res.status(200).json(director);
-  } else {
-    res.status(400).send('This director was not found.');
-  }
-});
 // CREATE, allows new users to register
 app.post('/users', (req, res) => {
   Users.findOne({ Username: req.body.Username })
