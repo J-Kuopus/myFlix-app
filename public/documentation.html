@@ -45,11 +45,21 @@
         <td>Returns data about a single movie to the user</td>
         <td>/movies/:Title</td>
         <td>GET</td>
-        <td>None</td>
+        <td>Example: "Hellraiser"</td>
         <td>
-          A JSON object holding data about a single movie including
-          (description, genre, director, image URL). Example: { "Title": "The
-          Wizard of Oz", "Director": "Victor Fleming"}
+          A JSON object holding data about a single movie, including
+          (description, genre, director, image URL).<br/>
+          Example:<br/>
+          {<br/>
+            "Title": "Hellraiser",<br/>
+            "Director": {<br/>
+                "Name": "Clive Barker"
+            },<br/>
+            "Genre": {<br/>
+                "Name": "Horror",<br/>
+                "Description": "The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment."
+            }<br/>
+        }
         </td>
       </tr>
       <tr>
