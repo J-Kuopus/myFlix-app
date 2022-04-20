@@ -255,25 +255,7 @@ app.put('/users/:Username/movies/:MovieID', (req, res) => {
   });
 });
 
-// DELETE, allows users to delete favorites
-app.delete('/users/:userId/favoriteMovies/:movieTitle', (req, res) => {
-  const { userId, movieTitle } = req.params;
 
-  let user = users.find((user) => user.userId == userId);
-
-  if (user) {
-    user.favoriteMovies = user.favoriteMovies.filter(
-      (title) => title !== movieTitle
-    );
-    res
-      .status(200)
-      .send(
-        `${movieTitle} has been removed from user ${userId}'s favorites list`
-      );
-  } else {
-    res.status(400).send('No such user exists.');
-  }
-});
 
 // DELETE, allows users to deregister
 app.delete('/users/:Username', (req, res) => {
