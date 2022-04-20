@@ -145,6 +145,17 @@ app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
 
+// READS and returns list of ALL Movies in JSON format
+app.get('/movies', (req, res) => {
+  Movies.find()
+  .then((movies) => {
+  res.status(201).json(movies);
+})
+  .catch((err) => {
+  console.error(err);
+  res.status(500).send('Error: ' + err)
+  });
+});
 
 // READS and returns details about movie in JSON format
 app.get('/movies/:title', (req, res) => {
