@@ -169,6 +169,17 @@ app.get('/movies/:Title', (req, res) => {
   });
 });
 
+// READS and returns details about ONE Movie Genre by name in JSON format
+app.get('/genre/:Name', (req, res) => {
+  Genres.findOne( { Name: req.params.Name })
+  .then((genre) => {
+  res.status(201).json(genre.Description);
+  })
+  .catch((err) => {
+  console.error(err);
+  res.status(500).send('Error: ' + err);
+  });
+});
 
 // READS and returns movie directors by name in JSON format
 app.get('/movies/directors/:directorName', (req, res) => {
