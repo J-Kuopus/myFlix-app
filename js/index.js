@@ -255,7 +255,21 @@ app.put('/users/:Username/movies/:MovieID', (req, res) => {
   });
 });
 
-
+// DELETE, allows users to delete One Movie from their Favorites list
+app.delete('/users/:Username/movies/:MovieID', (req, res) => {
+  Users.findOneAndRemove({ Username: req.params.Username })
+  .then((movie) => {
+  if (!movie) {
+  res.status(400).send(req.params.MovieID + ' was not found.');
+  } else {
+  res.status(200).send(req.params.MovieID + ' was deleted from favorites list.');
+  }
+  })
+  .catch((err) => {
+  console.error(err);
+  res.status(500).send('Error: ' + err);
+  });
+});
 
 // DELETE, allows users to deregister
 app.delete('/users/:Username', (req, res) => {
