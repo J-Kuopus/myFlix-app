@@ -157,6 +157,17 @@ app.get('/movies', (req, res) => {
   });
 });
 
+// READS and returns details about ONE Movie in JSON format
+app.get('/movies/:Title', (req, res) => {
+  Movies.findOne({ Title: req.params.Title })
+  .then((movie) => {
+  res.json(movie);
+})
+  .catch((err) => {
+  console.error(err);
+  res.status(500).send('Error: ' + err);
+  });
+});
 
 // READS and returns details about movie genres in JSON format
 app.get('/movies/genre/:genreName', (req, res) => {
