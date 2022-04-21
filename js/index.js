@@ -64,7 +64,7 @@ app.get('/movies/:Title', (req, res) => {
   });
 });
 
-// READS and returns details about ONE Movie Genre by name in JSON format
+// READS and returns details about ONE Genre by name in JSON format
 app.get('/genre/:Name', (req, res) => {
   Movies.findOne( { 'Genre.Name': req.params.Name })
   .then((movie) => {
@@ -80,7 +80,7 @@ app.get('/genre/:Name', (req, res) => {
   });
 });
 
-// READS and returns info about ONE director by name in JSON format
+// READS and returns info about ONE Director by name in JSON format
 app.get('/director/:Name', (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.Name })
   .then((movie) => {
@@ -95,7 +95,6 @@ app.get('/director/:Name', (req, res) => {
   res.status(500).send('Error; ' + err);
   });
 });
-
 
 // CREATE, allows new users to register
 app.post('/users', (req, res) => {
