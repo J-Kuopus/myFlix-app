@@ -173,7 +173,7 @@ app.get('/movies/:Title', (req, res) => {
 app.get('/genre/:Name', (req, res) => {
   Genres.findOne( { Name: req.params.Name })
   .then((genre) => {
-  res.status(201).json(genre.Description);
+  res.status(200).json(genre.Description);
   })
   .catch((err) => {
   console.error(err);
