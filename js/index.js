@@ -15,7 +15,7 @@ const express = require('express'),
   // Imports Morgan library
   morgan = require('morgan'),
   // Imports body-parser
-  bodyParser = require('body-parser'),
+  bodyParser = require('body-parser')
 
   // Defines app variable that accesses Express functions
 const app = express();
