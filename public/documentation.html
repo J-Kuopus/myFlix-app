@@ -96,23 +96,24 @@
         <td>/users</td>
         <td>POST</td>
         <td>
-          A JSON object holding data about the user to add, structured like: 
-          {
-            ID: Integer,
-            Username: String,
-            Password: String,
-            Email: String,
-            Birthday: Date
+          A JSON object holding data about the user to add, structured like:<br/>
+          {<br/>
+            Username: String,<br/>
+            Password: String,<br/>
+            Email: String,<br/>
+            Birthday: Date<br/>
           }
         </td>
-        <td>A JSON object holding data about the user that was added, structured like: 
-          { 
-            ID: Integer,
-            Username: String,
-            Password: String,
-            Email: String,
-            Birthday: Date
-          }
+        <td>A JSON object holding data about the user that was added, structured like:<br/>
+          {<br/>
+            "_id": 4,<br/>
+            "Username": "lemonpieFace",<br/>
+            "Password": "password4",<br/>
+            "Email": "lemonpie@gmail.com",<br/>
+            "Birthday": {<br/>
+              "$date": {<br/>
+                "$numberLong": "1291680000000"<br/>
+              }
         </td>
       </tr>
       <tr>
