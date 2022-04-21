@@ -81,16 +81,7 @@ app.get('/genre/:Name', (req, res) => {
 });
 
 // READS and returns info about ONE director by name in JSON format
-app.get('/director/:Name', (req, res) => {
-  Movies.Director.findOne({ Name: req.params.Name })
-  .then((director) => {
-  res.status(200).json(director);
-  })
-  .catch((err) => {
-  console.error(err);
-  res.status(500).send('Error; ' + err);
-  });
-});
+
 
 // CREATE, allows new users to register
 app.post('/users', (req, res) => {
