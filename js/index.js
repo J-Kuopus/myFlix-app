@@ -65,16 +65,7 @@ app.get('/movies/:Title', (req, res) => {
 });
 
 // READS and returns details about ONE Movie Genre by name in JSON format
-app.get('/genre/:Name', (req, res) => {
-  Movies.Genres.findOne( { Name: req.params.Name })
-  .then((genre) => {
-  res.status(200).json(genre.Description);
-  })
-  .catch((err) => {
-  console.error(err);
-  res.status(500).send('Error: ' + err);
-  });
-});
+
 
 // READS and returns info about ONE director by name in JSON format
 app.get('/director/:Name', (req, res) => {
