@@ -29,105 +29,6 @@ const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
 });
 
-// User list array
-let users = [
-  { userId: 1, name: 'Malakai', favoriteMovies: ['Phantasm', 'Hellraiser'] },
-  { userId: 2, name: 'Lucy', favoriteMovies: [] },
-];
-// Movie list array
-let movies = [
-  {
-    Title: 'The Wizard of Oz',
-    Director: { Name: 'Victor Fleming' },
-    Genre: {
-      Name: 'Fantasy',
-      Description:
-        'The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws.',
-    },
-  },
-  {
-    Title: 'Willy Wonka & the Chocolate Factory',
-    Director: { Name: 'Mel Stuart' },
-    Genre: {
-      Name: 'Fantasy',
-      Description:
-        'The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws.',
-    },
-  },
-  {
-    Title: 'Dawn of the Dead',
-    Director: { Name: 'George A. Romero' },
-    Genre: {
-      Name: 'Horror',
-      Description:
-        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
-    },
-  },
-  {
-    Title: 'Videodrome',
-    Director: { Name: 'David Cronenberg' },
-    Genre: {
-      Name: 'Horror',
-      Description:
-        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
-    },
-  },
-  {
-    Title: 'Phantasm',
-    Director: { Name: 'Don Coscarelli' },
-    Genre: {
-      Name: 'Horror',
-      Description:
-        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
-    },
-  },
-  {
-    Title: 'Phenomena',
-    Director: { Name: 'Dario Argento' },
-    Genre: {
-      Name: 'Horror',
-      Description:
-        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
-    },
-  },
-  {
-    Title: 'City of the Living Dead',
-    Director: { Name: 'Lucio Fulci' },
-    Genre: {
-      Name: 'Horror',
-      Description:
-        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
-    },
-  },
-  {
-    Title: 'Hellraiser',
-    Director: { Name: 'Clive Barker' },
-    Genre: {
-      Name: 'Horror',
-      Description:
-        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
-    },
-  },
-  {
-    Title: 'Prince of Darkness',
-    Director: { Name: 'John Carpenter' },
-    Genre: {
-      Name: 'Horror',
-      Description:
-        'The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment.',
-    },
-  },
-  {
-    Title: 'Paprika',
-    Director: { Name: 'Satoshi Kon' },
-    Genre: {
-      Name: 'Fantasy',
-      Description:
-        'The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws.',
-    },
-  },
-];
-
 // Sets up logger
 app.use(morgan('combined', { stream: accessLogStream }));
 
@@ -183,7 +84,7 @@ app.get('/genre/:Name', (req, res) => {
 
 // READS and returns info about ONE director by name in JSON format
 app.get('/director/:Name', (req, res) => {
-  Movies.Directors.findOne({ Name: req.params.Name })
+  Movies.Director.findOne({ Name: req.params.Name })
   .then((director) => {
   res.status(200).json(director);
   })
