@@ -16,8 +16,7 @@ const express = require('express'),
   morgan = require('morgan'),
   // Imports body-parser
   bodyParser = require('body-parser'),
-  // Imports uuid
-  uuid = require('uuid'),
+
   // Imports built-in node modules for fs and path
   fs = require('fs'),
   path = require('path');
