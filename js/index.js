@@ -183,7 +183,7 @@ app.get('/genre/:Name', (req, res) => {
 
 // READS and returns info about ONE director by name in JSON format
 app.get('/director/:Name', (req, res) => {
-  Directors.findOne({ Name: req.params.Name })
+  Movies.Directors.findOne({ Name: req.params.Name })
   .then((director) => {
   res.status(200).json(director);
   })
