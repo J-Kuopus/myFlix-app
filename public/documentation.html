@@ -66,17 +66,29 @@
         <td>Returns data about a movie genre, including name and description</td>
         <td>/genre/:Name</td>
         <td>GET</td>
-        <td>None</td>
-        <td>A JSON object holding data about a single movie genre</td>
+        <td>Example: "Fantasy"</td>
+        <td>A JSON object holding data about a single movie genre, <br/>
+        Example:<br/>{<br/>
+          "Name": "Fantasy",<br/>
+              "Description": "The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws."<br/>
+            }</td>
       </tr>
       <tr>
         <td>Returns data about a director by name</td>
         <td>/director/:Name</td>
         <td>GET</td>
-        <td>None</td>
+        <td>Example: "Victor Fleming"</td>
         <td>
           A JSON object holding data about a single director by name, (including
-          bio, birth year, death year) Example:{ "Name": "David Cronenberg" }
+          bio, birth year, death year)<br/>
+          Example:<br/>
+          {<br/>
+            "Name": "Victor Fleming",<br/>
+            "Bio": "Victor Fleming was an American film director, cinematographer, and producer whose most popular films were 'Gone with the Wind', and 'The Wizard of Oz'.",<br/>
+            "Birth": "1889",<br/>
+            "Death": "1949"<br/>
+          },
+          
         </td>
       </tr>
       <tr>
