@@ -65,9 +65,9 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
   .then((movie) => {
     if (movie) {
       res.status(200).json(movie);
-} else {
+  } else {
   res.status(400).send('Movie not found.');
-};
+  };
 })
   .catch((err) => {
   console.error(err);
