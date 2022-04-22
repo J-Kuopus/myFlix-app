@@ -92,13 +92,13 @@ app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, 
 });
 
 // READS and returns info about ONE Director by name in JSON format
-app.get('/director/:Name', (req, res) => {
+app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.Name })
   .then((movie) => {
     if (movie) {
-  res.status(200).json(movie.Director);
+      res.status(200).json(movie.Director);
   } else {
-    res.status(400).send('Director not found.');
+      res.status(400).send('Director not found.');
   };
 })
   .catch((err) => {
