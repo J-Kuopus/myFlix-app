@@ -48,13 +48,13 @@ app.get('/', (req, res) => {
 });
 
 // READS and returns list of ALL Movies in JSON format
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
   .then((movies) => {
   res.status(201).json(movies);
 })
-  .catch((err) => {
-  console.error(err);
+  .catch((error) => {
+  console.error(error);
   res.status(500).send('Error: ' + err)
   });
 });
