@@ -33,7 +33,11 @@ app.use(morgan('common'));
 app.use(express.static('public'));
 
 // Accesses body-parser
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+
 
 // READS index.html page
 app.get('/', (req, res) => {
