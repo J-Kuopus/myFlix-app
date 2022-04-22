@@ -154,7 +154,7 @@ app.put('/users/:Username', (req, res) => {
   });
 });
 // UPDATE, Allows users to add One Movie to their Favorites list
-app.put('/users/:Username/movies/:MovieID', (req, res) => {
+app.put('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username },
   { $push: { FavoriteMovies: req.params.MovieID }
   },
