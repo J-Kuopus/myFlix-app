@@ -134,23 +134,24 @@ app.post('/users', (req, res) => {
   });
 });
 // UPDATE, allows users to update username
-app.put('/users/:Username', (req, res) => {
-  Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
-  {
-    Username: req.body.Username,
-    Password: req.body.Password,
-    Email: req.body.Email,
-    Birthday: req.body.Birthday
-  }
-},
-{ new: true }, //This line makes sure that the updated document is returned
-(err, updatedUser) => {
-  if (err) {
-    console.error(err);
-    res.status(500).send('Error: ' + err);
-  } else {
-    res.json(updatedUser);
-  }
+app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Users.findOneAndUpdate({ Username: req.params.Username }, 
+      { $set: {
+        Username: req.body.Username,
+        Password: req.body.Password,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday
+      }
+    },
+    { new: true }, //This line makes sure that the updated document is returned
+    (err, updatedUser) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      } else {
+        res.json(updatedUser);
+      }
   });
 });
 // UPDATE, Allows users to add One Movie to their Favorites list
