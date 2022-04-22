@@ -38,6 +38,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Imports "auth.js" file. (app) ensures that Express is available in "auth.js".
 let auth = require('./auth')(app);
 
+// Imports "passport.js" file
+const passport = require('passport');
+require('./passport');
+
 // READS index.html page
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
