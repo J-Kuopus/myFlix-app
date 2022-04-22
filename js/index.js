@@ -85,7 +85,7 @@ app.get('/director/:Name', (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.Name })
   .then((movie) => {
     if (movie) {
-  res.status(200).json(movie.Director.Bio);
+  res.status(200).json(movie.Director);
   } else {
     res.status(400).send('Director not found.');
   };
