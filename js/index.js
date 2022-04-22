@@ -187,7 +187,7 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
     });
 });
 
-// DELETE, allows users to deregister
+// DELETE, allows users to delete user account
 app.delete('/users/:Username', (req, res) => {
   Users.findOneAndRemove({ Username: req.params.Username })
   .then((user) => {
