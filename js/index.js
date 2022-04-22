@@ -35,9 +35,8 @@ app.use(express.static('public'));
 // Accesses body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-
-
+// Imports "auth.js" file. (app) ensures that Express is available in "auth.js".
+let auth = require('./auth')(app);
 
 // READS index.html page
 app.get('/', (req, res) => {
