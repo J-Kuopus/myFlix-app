@@ -69,7 +69,7 @@ app.get('/genre/:Name', (req, res) => {
   Movies.findOne( { 'Genre.Name': req.params.Name })
   .then((movie) => {
     if (movie) {
-  res.json(movie.Genre.Description);
+  res.json(movie.Genre);
   } else {
     res.status(400).send('Genre not found.');
   };
