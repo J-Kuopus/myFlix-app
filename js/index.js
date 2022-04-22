@@ -188,19 +188,20 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
 });
 
 // DELETE, allows users to delete user account
-app.delete('/users/:Username', (req, res) => {
-  Users.findOneAndRemove({ Username: req.params.Username })
-  .then((user) => {
-  if (!user) {
-  res.status(400).send(req.params.Username + ' was not found.');
-  } else {
-  res.status(200).send(req.params.Username + ' was deleted.');
-  }
-  })
-  .catch((err) => {
-  console.error(err);
-  res.status(500).send('Error: ' + err);
-  });
+app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Users.findOneAndRemove({ Username: req.params.Username })
+      .then((user) => {
+        if (!user) {
+          res.status(400).send(req.params.Username + ' was not found.');
+        } else {
+          res.status(200).send(req.params.Username + ' was deleted.');
+        }
+      })
+      .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+      });
 });
 
 // Error-handling function
