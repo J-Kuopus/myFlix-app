@@ -1,3 +1,4 @@
+// Imports Passport package and links to Passport libraries
 const passport = require('passport'),
   LocalStrategy = require('passport-local').Strategy,
   Models = require('./models.js'),
@@ -7,6 +8,7 @@ let Users = Models.User,
   JWTStrategy = passportJWT.Strategy,
   ExtractJWT = passportJWT.ExtractJwt;
 
+// Defines Local Strategy for HTTP authentication
 passport.use(new LocalStrategy({
   usernameField: 'Username',
   passwordField: 'Password'
@@ -28,6 +30,7 @@ passport.use(new LocalStrategy({
   });
 }));
 
+// Defines strategy for JWT authentication
 passport.use(new JWTStrategy({
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
   secretOrKey: 'your_jwt_secret'
