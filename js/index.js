@@ -60,10 +60,14 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
 });
 
 // READS and returns details about ONE Movie in JSON format
-app.get('/movies/:Title', (req, res) => {
+app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ Title: req.params.Title })
   .then((movie) => {
-  res.json(movie);
+    if (movie) {
+      res.status(200).json(movie);
+} else {
+  res.status(400).send('Movie not found.');
+};
 })
   .catch((err) => {
   console.error(err);
