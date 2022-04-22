@@ -133,6 +133,7 @@ app.post('/users', (req, res) => {
     res.status(500).send('Error: ' + error);
   });
 });
+
 // UPDATE, allows users to update username
 app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
   (req, res) => {
@@ -154,6 +155,7 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
       }
   });
 });
+
 // UPDATE, Allows users to add One Movie to their Favorites list
 app.put('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), 
   (req, res) => {
