@@ -76,13 +76,13 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
 });
 
 // READS and returns details about ONE Genre by name in JSON format
-app.get('/genre/:Name', (req, res) => {
+app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne( { 'Genre.Name': req.params.Name })
   .then((movie) => {
     if (movie) {
-  res.json(movie.Genre);
+      res.json(movie.Genre);
   } else {
-    res.status(400).send('Genre not found.');
+      res.status(400).send('Genre not found.');
   };
 })
   .catch((err) => {
