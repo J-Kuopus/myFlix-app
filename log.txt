@@ -73,3 +73,5 @@ Timestamp: Tue Apr 05 2022 13:49:10 GMT+0200 (Mitteleuropäische Sommerzeit)
 ::1 - - [22/Apr/2022:13:10:02 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.29.0"
 ::1 - - [22/Apr/2022:13:10:27 +0000] "POST /users HTTP/1.1" 500 136 "-" "PostmanRuntime/7.29.0"
 ::1 - - [22/Apr/2022:13:13:39 +0000] "POST /users HTTP/1.1" 500 136 "-" "PostmanRuntime/7.29.0"
+::1 - - [22/Apr/2022:13:51:37 +0000] "POST /movies HTTP/1.1" 404 146 "-" "PostmanRuntime/7.29.0"
+::1 - - [22/Apr/2022:13:51:43 +0000] "GET /movies HTTP/1.1" 201 7266 "-" "PostmanRuntime/7.29.0"
