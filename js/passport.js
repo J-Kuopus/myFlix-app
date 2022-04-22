@@ -19,7 +19,7 @@ passport.use(new LocalStrategy({
       console.log(error);
       return callback(error);
     }
-
+    // Invokes callback for when username isn't found in database, returns message
     if (!user) {
       console.log('incorrect username');
       return callback(null, false, {message: 'Incorrect username or password.'});
