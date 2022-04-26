@@ -5,12 +5,6 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-// Connects Mongooose to database for CRUD operations
-mongoose.connect('mongodb://localhost:27017/myFlixDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
 // Imports Express framework
 const express = require('express'),
   // Imports Morgan library
@@ -45,6 +39,12 @@ let auth = require('./auth')(app);
 // Imports "passport.js" file
 const passport = require('passport');
 require('./passport');
+
+// Connects Mongooose to database for CRUD operations
+mongoose.connect('mongodb://localhost:27017/myFlixDB', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // READS index.html page
 app.get('/', (req, res) => {
