@@ -114,22 +114,6 @@ app.get(
   }
 );
 
-// READS and returns list of all users
-app.get(
-  '/users',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    Users.find()
-      .then((users) => {
-        res.status(200).json(users);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send('Error: ' + err);
-      });
-  }
-);
-
 // READS and returns info about ONE Director by name in JSON format
 app.get(
   '/director/:Name',
