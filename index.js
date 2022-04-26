@@ -33,6 +33,9 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+const cors = require('cors');
+app.use(cors());
+
 // Imports "auth.js" file. (app) ensures that Express is available in "auth.js".
 let auth = require('./auth')(app);
 
