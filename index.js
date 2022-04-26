@@ -15,6 +15,9 @@ const express = require('express'),
 // Defines app variable that accesses Express functions
 const app = express();
 
+// Imports express-validator library
+const { check, validationResult } = require('express-validator');
+
 // Creates write stream (in append mode)
 const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
