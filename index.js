@@ -150,10 +150,10 @@ app.get(
 // CREATE, allows new users to register
 app.post('/users', (req, res) => {
   let hashedPassword = Users.hashPassword(req.body.Password);
-  Users.findOne({ Username: req.body.Username })
+  Users.findOne({ Username: req.body.Username }) // Search to see if user with requested username already exists
     .then((user) => {
       if (user) {
-        return res.status(400).send(req.body.Username + ' already exists');
+        return res.status(400).send(req.body.Username + ' already exists'); //If user already exists, send response
       } else {
         Users.create({
           Username: req.body.Username,
