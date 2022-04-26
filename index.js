@@ -33,6 +33,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Imports CORS module for allowing cross-origin domain access
 const cors = require('cors');
 app.use(cors());
 
