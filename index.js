@@ -48,7 +48,12 @@ const passport = require('passport');
 require('./passport');
 
 // Connects Mongooose to database for CRUD operations
-mongoose.connect('mongodb://localhost:27017/myFlixDB', {
+/*mongoose.connect('mongodb://localhost:27017/myFlixDB', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});*/
+
+mongoose.connect( process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
