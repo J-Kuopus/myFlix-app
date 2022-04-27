@@ -1,0 +1,244 @@
+[{
+  "_id": {
+    "$oid": "625aaae8bfe2c0b9d6723a09"
+  },
+  "Title": "Phenomena",
+  "Description": "A young girl who has an amazing ability to communicate with insects is transformed to an exclusive Swiss boarding school, where her unusual capability might help solve a string of murders.",
+  "Genre": {
+    "Name": "Horror",
+    "Description": "The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment."
+  },
+  "Director": {
+    "Name": "Dario Argento",
+    "Bio": "Dario Argento is an Italian film director, producer, screenwriter, actor and critic. His influential work in the horror genre during the 1970s and 1980s, has led him to being referred to as the 'Master of Thrill' and the 'Master of Horror'.",
+    "Birth": "1940"
+  },
+  "ImagePath": "phenomena.png",
+  "Featured": false
+},{
+  "_id": {
+    "$oid": "625aab77bfe2c0b9d6723a0a"
+  },
+  "Title": "City of the Living Dead",
+  "Description": "A reporter and a psychic race to close the Gates of Hell after the suicide of a clergyman caused them to open, allowing the dead to rise from their graves.",
+  "Genre": {
+    "Name": "Horror",
+    "Description": "The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment."
+  },
+  "Director": {
+    "Name": "Lucio Fulci",
+    "Bio": "Lucio Fulci was an Italian film director, screenwriter, and actor. Although he worked in a wide array of genres through a career spanning nearly five decades, including comedies and Spaghetti Westerns, he garnered an international cult following for his giallo and horror films.",
+    "Birth": "1927",
+    "Death": "1996"
+  },
+  "ImagePath": "city-of-the-livingdead.png",
+  "Featured": true
+},{
+  "_id": {
+    "$oid": "625aac09bfe2c0b9d6723a0b"
+  },
+  "Title": "The Funhouse",
+  "Description": "Four teenagers visit a local carnival for a night of innocent amusement. They soon discover the carnival's terrible secret and a night of terror ensues.",
+  "Genre": {
+    "Name": "Horror",
+    "Description": "The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment."
+  },
+  "Director": {
+    "Name": "Tobe Hooper",
+    "Bio": "Tobe Hooper was an American director, screenwriter, and producer best known for his work in the horror genre. The British Film Institute cited Hooper as one of the most influential horror filmmakers of all time.",
+    "Birth": "1943",
+    "Death": "2017"
+  },
+  "ImagePath": "funhouse.png",
+  "Featured": false
+},{
+  "_id": {
+    "$oid": "625aacaebfe2c0b9d6723a0c"
+  },
+  "Title": "Hellraiser",
+  "Description": "A woman discovers the newly resurrected, partially formed, body of her brother-in-law. She starts killing for him to revitalize his body so he can escape the demonic beings that are pursuing him after he escaped their sadistic underworld.",
+  "Genre": {
+    "Name": "Horror",
+    "Description": "The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment."
+  },
+  "Director": {
+    "Name": "Clive Barker",
+    "Bio": "Clive Barker is an English playwright, author, film director and visual artist. His fiction has been adapted into several films, most notably the Hellraiser and Candyman series.",
+    "Birth": "1952"
+  },
+  "ImagePath": "hellraiser.png",
+  "Featured": false
+},{
+  "_id": {
+    "$oid": "625aad26bfe2c0b9d6723a0d"
+  },
+  "Title": "Phantasm",
+  "Description": "A teenage boy and his friends face off against a mysterious grave robber, known only as the Tall Man, who employs a lethal arsenal of unearthly weapons.",
+  "Genre": {
+    "Name": "Horror",
+    "Description": "The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment."
+  },
+  "Director": {
+    "Name": "Don Coscarelli",
+    "Bio": "Don Coscarelli is an American film director, producer and screenwriter who is best known for his horror films including the Phantasm series and Bubba Ho-Tep.",
+    "Birth": "1954"
+  },
+  "ImagePath": "phantasm.png",
+  "Featured": true
+},{
+  "_id": {
+    "$oid": "625aadfcbfe2c0b9d6723a0e"
+  },
+  "Title": "Willy Wonka & the Chocolate Factory",
+  "Description": "A poor but hopeful boy seeks out one of the five coveted golden tickets, found only in special candybars, that will send him on a tour of Willy Wonka's mysterious chocolate factory.",
+  "Genre": {
+    "Name": "Fantasy",
+    "Description": "The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws."
+  },
+  "Director": {
+    "Name": "Mel Stuart",
+    "Bio": "Mel Stuart was an American film director and producer who often worked with producer David L. Wolper, at whose firm he worked for 17 years before going freelance.",
+    "Birth": "1928",
+    "Death": "2012"
+  },
+  "ImagePath": "willy-wonka.png",
+  "Featured": true
+},{
+  "_id": {
+    "$oid": "625aae8fbfe2c0b9d6723a0f"
+  },
+  "Title": "The Wizard of Oz",
+  "Description": "Young Dorothy Gale and her dog are swept away by a tornado from their Kansas farm to the magical Land of Oz, and embark on a quest with three new friends to see the Wizard, who can return her home and fulfill the others' wishes.",
+  "Genre": {
+    "Name": "Fantasy",
+    "Description": "The fantasy genre is defined by both circumstance and setting inside a fictional universe with an unrealistic set of natural laws."
+  },
+  "Director": {
+    "Name": "Victor Fleming",
+    "Bio": "Victor Fleming was an American film director, cinematographer, and producer whose most popular films were 'Gone with the Wind', and 'The Wizard of Oz'.",
+    "Birth": "1889",
+    "Death": "1949"
+  },
+  "ImagePath": "wizard-of-oz.png",
+  "Featured": true
+},{
+  "_id": {
+    "$oid": "625aaf12bfe2c0b9d6723a10"
+  },
+  "Title": "Logan's Run",
+  "Description": "A police officer in the future uncovers the deadly secret behind a society that worships youth.",
+  "Genre": {
+    "Name": "Science Fiction",
+    "Description": "Science fiction movies are defined by a mixture of speculation and science and often incorporate space, biology, energy, and time to explain situations and events."
+  },
+  "Director": {
+    "Name": "Michael Anderson",
+    "Bio": "Michael Anderson was an English film director, best known for directing the World War II film 'The Dam Busters', the epic 'Around the World in 80 Days' and the dystopian sci-fi film 'Logan's Run'.",
+    "Birth": "1920",
+    "Death": "2018"
+  },
+  "ImagePath": "logans-run.png",
+  "Featured": true
+},{
+  "_id": {
+    "$oid": "625aaf8fbfe2c0b9d6723a11"
+  },
+  "Title": "The Omega Man",
+  "Description": "Biological war has decimated life on Earth. Los Angeles is a windswept ghost town where Robert Neville tools his convertible through sunlit streets foraging for supplies.",
+  "Genre": {
+    "Name": "Science Fiction",
+    "Description": "Science fiction movies are defined by a mixture of speculation and science and often incorporate space, biology, energy, and time to explain situations and events."
+  },
+  "Director": {
+    "Name": "Boris Sagal",
+    "Bio": "Boris Sagal was an American television and film director whose credits include, 'The Twilight Zone', 'Alfred Hitchcock Presents', 'Night Gallery' and many more.",
+    "Birth": "1923",
+    "Death": "1981"
+  },
+  "ImagePath": "omega-man.png",
+  "Featured": false
+},{
+  "_id": {
+    "$oid": "625ad267bfe2c0b9d6723a12"
+  },
+  "Title": "Suspiria",
+  "Description": "An American newcomer to a prestigious German ballet academy comes to realize that the school is a front for something sinister amid a series of grisly murders.",
+  "Genre": {
+    "Name": "Horror",
+    "Description": "The horror genre is centered upon depicting terrifying or macabre events for the sake of entertainment."
+  },
+  "Director": {
+    "Name": "Dario Argento",
+    "Bio": "Dario Argento is an Italian film director, producer, screenwriter, actor and critic. His influential work in the horror genre during the 1970s and 1980s, has led him to being referred to as the 'Master of Thrill' and the 'Master of Horror'.",
+    "Birth": "1940"
+  },
+  "ImagePath": "suspiria.png",
+  "Featured": true
+},
+{
+  "_id": 1,
+  "Username": "jimHalpert89",
+  "Password": "password1",
+  "Email": "dunder@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "604713600000"
+    }
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "625aa96dbfe2c0b9d6723a08"
+    },
+    {
+      "$oid": "625aad26bfe2c0b9d6723a0d"
+    }
+  ]
+},{
+  "_id": 2,
+  "Username": "suzyQuery98",
+  "Password": "password2",
+  "Email": "suzyQ@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "905558400000"
+    }
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "625aacaebfe2c0b9d6723a0c"
+    },
+    {
+      "$oid": "625aab77bfe2c0b9d6723a0a"
+    }
+  ]
+},{
+  "_id": 3,
+  "Username": "beatrixKiddo95",
+  "Password": "password3",
+  "Email": "bkiddo@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "815616000000"
+    }
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "625aae8fbfe2c0b9d6723a0f"
+    }
+  ]
+},{
+  "_id": 4,
+  "Username": "lemonpieFace",
+  "Password": "password4",
+  "Email": "lemonpie@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "1291680000000"
+    }
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "625aaf12bfe2c0b9d6723a10"
+    }
+  ]
+}]
