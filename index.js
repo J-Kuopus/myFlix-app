@@ -4,6 +4,8 @@ const Models = require('./models.js');
 // Imports Mongoose Models
 const Movies = Models.Movie;
 const Users = Models.User;
+// Imports fs node module
+const fs = require('fs');
 
 // Imports Express framework
 const express = require('express'),
