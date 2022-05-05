@@ -5,7 +5,7 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 // Imports fs node module
-const fs = require('fs');
+/*const fs = require('fs');*/
 
 // Imports Express framework
 const express = require('express'),
@@ -21,15 +21,15 @@ const app = express();
 const { check, validationResult } = require('express-validator');
 
 // Creates write stream (in append mode)
-const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
+/*const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
-});
+});*/
 
 // Sets up logger
-app.use(morgan('combined', { stream: accessLogStream }));
+/*app.use(morgan('combined', { stream: accessLogStream }));
 
 // Uses Morgan's logging methods
-app.use(morgan('common'));
+app.use(morgan('common'));*/
 
 // Accesses all files in "public" folder
 app.use(express.static('public'));
