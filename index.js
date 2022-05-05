@@ -300,7 +300,7 @@ app.use((err, req, res, next) => {
 });
 
 // Listening function
-const port = process.env.PORT || 8080;
-app.listen(port, '0.0.0.0',() => {
+/*const port = process.env.PORT || 8080;*/
+app.listen(process.env.PORT || 8080, () => {
   console.log('Listening on Port ' + port);
 });
