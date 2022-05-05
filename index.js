@@ -26,10 +26,10 @@ const { check, validationResult } = require('express-validator');
 });*/
 
 // Sets up logger
-/*app.use(morgan('combined', { stream: accessLogStream }));
+app.use(morgan('combined', { stream: accessLogStream }));
 
 // Uses Morgan's logging methods
-app.use(morgan('common'));*/
+app.use(morgan('common'));
 
 // Accesses all files in "public" folder
 app.use(express.static('public'));
