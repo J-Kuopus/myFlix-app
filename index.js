@@ -19,9 +19,9 @@ const app = express();
 const { check, validationResult } = require('express-validator');
 
 // Creates write stream (in append mode)
-/*const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
+const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
   flags: 'a',
-});*/
+});
 
 // Sets up logger
 app.use(morgan('combined', { stream: accessLogStream }));
