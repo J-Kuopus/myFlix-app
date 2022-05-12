@@ -142,7 +142,7 @@ app.get(
 );
 
 // CREATE, allows new users to register
-app.post('/users', 
+app.post('/register', 
 // Validation logic here for request
   [
     check('Username', 'Username is required.').isLength({min: 5}),
