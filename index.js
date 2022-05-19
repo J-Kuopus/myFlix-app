@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
 // READS and returns list of ALL Movies in JSON format
 app.get(
   '/movies',
-  /*passport.authenticate('jwt', { session: false }),*/
+  passport.authenticate('jwt', { session: false }),
   (req, res) => {
     Movies.find()
       .then((movies) => {
