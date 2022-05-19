@@ -40,7 +40,7 @@ app.use(bodyParser.json());
 
 // Imports CORS module for allowing cross-origin domain access
 const cors = require('cors');
-app.use(cors());
+//app.use(cors());
 
 // Imports "auth.js" file. (app) ensures that Express is available in "auth.js".
 let auth = require('./auth')(app);
