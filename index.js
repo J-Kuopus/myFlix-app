@@ -40,8 +40,8 @@ app.use(bodyParser.json());
 
 // Imports CORS module for allowing cross-origin domain access
 const cors = require('cors');
-//app.use(cors());
-let allowedOrigins = ['http://localhost:8080', 
+// ***UNCOMMENT TO SET CORS POLICY***
+/* let allowedOrigins = ['http://localhost:8080', 
                       'http://localhost:1234', 
                       'http://localhost:4200', 
                       'https://powerful-coast-48240.herokuapp.com/'];
@@ -55,6 +55,11 @@ app.use(cors({
     }
     return callback(null, true);
   }
+})); */
+
+// DELETE this when uncommenting CORS POLICY!!
+app.use(cors({
+  origin: '*'
 }));
 
 // Imports "auth.js" file. (app) ensures that Express is available in "auth.js".
