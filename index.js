@@ -40,7 +40,7 @@ app.use(bodyParser.json());
 
 // Imports CORS module for allowing cross-origin domain access
 const cors = require('cors');
-// ***UNCOMMENT TO SET CORS POLICY***
+
 let allowedOrigins = ['http://localhost:8080', 
                       'http://localhost:1234', 
                       'http://localhost:4200', 
@@ -57,11 +57,6 @@ app.use(cors({
     return callback(null, true);
   }
 }));
-
-// DELETE this when uncommenting CORS POLICY!!
-/* app.use(cors({
-  origin: '*'
-})); */
 
 // Imports "auth.js" file. (app) ensures that Express is available in "auth.js".
 let auth = require('./auth')(app);
@@ -81,12 +76,26 @@ mongoose.connect( process.env.CONNECTION_URI, {
   useUnifiedTopology: true,
 });
 
-// READS index.html page
+/* ******* START OF ENDPOINT DEFINITION ******* 
+************************************************
+************************************************
+*/
+
+/**
+ * GET: Returns welcome message for '/' request URL
+ * @returns Welcome message
+ */
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
 
-// READS and returns list of ALL Movies in JSON format
+
+/**
+ * GET: Returns a list of ALL movies to the user
+ * Request body: Bearer token
+ * @returns array of movie objects in JSON format
+ * @requires passport
+ */
 app.get(
   '/movies',
   passport.authenticate('jwt', { session: false }),
@@ -102,7 +111,14 @@ app.get(
   }
 );
 
-// READS and returns details about ONE Movie in JSON format
+
+/**
+ * GET: Returns data about a single movie by title to the user
+ * Request body: Bearer token
+ * @param Title
+ * @returns movie object in JSON format
+ * @requires passport
+ */
 app.get(
   '/movies/:Title',
   passport.authenticate('jwt', { session: false }),
@@ -122,7 +138,14 @@ app.get(
   }
 );
 
-// READS and returns details about ONE Genre by name in JSON format
+
+/**
+ * GET: Returns data about movie genre (description) by name (e.g. "Horror")
+ * Request body: Bearer token
+ * @param Name (of genre)
+ * @returns genre object in JSON format
+ * @requires passport
+ */
 app.get(
   '/genre/:Name',
   passport.authenticate('jwt', { session: false }),
@@ -142,6 +165,14 @@ app.get(
   }
 );
 
+
+/**
+ * GET: Returns data about a director (bio, birth year, death year) by name
+ * Request body: Bearer token
+ * @param Name (of director)
+ * @returns director object in JSON format
+ * @requires passport
+ */
 // READS and returns info about ONE Director by name in JSON format
 app.get(
   '/director/:Name',
@@ -162,7 +193,12 @@ app.get(
   }
 );
 
-// CREATE, allows new users to register
+
+/**
+ * POST: Allows new users to register; Username, Password & Email are required fields
+ * Request body: Bearer token, JSON with user information
+ * @returns user object in JSON format
+ */
 app.post('/users', 
 // Validation logic here for request
   [
@@ -207,7 +243,13 @@ app.post('/users',
     });
 });
 
-// UPDATE, allows users to update username
+/**
+ * PUT: Allow users to update their user info (find by username)
+ * Request body: Bearer token, updated user info
+ * @param Username
+ * @returns user object with updates in JSON format
+ * @requires passport
+ */
 app.put(
   '/users/:Username',
   [
@@ -251,7 +293,14 @@ app.put(
   }
 );
 
-// READ--allows users to view their profile info
+
+/**
+ * GET: Returns data on a single user by username
+ * Request body: Bearer token
+ * @param Username
+ * @returns user object in JSON format
+ * @requires passport
+ */
 app.get('/users/:Username',  
   passport.authenticate('jwt', { session: false }), 
   (req, res) => {
@@ -265,7 +314,15 @@ app.get('/users/:Username',
       });
 });
 
-// UPDATE, Allows users to add One Movie to their Favorites list
+
+/**
+ * POST: Allows users to add a movie to their list of favorites
+ * Request body: Bearer token
+ * @param username
+ * @param movieId
+ * @returns user object in JSON format
+ * @requires passport
+ */
 app.put(
   '/users/:Username/movies/:MovieID',
   passport.authenticate('jwt', { session: false }),
@@ -286,7 +343,14 @@ app.put(
   }
 );
 
-// READ, gets a list of user's favorite movies
+
+/**
+ * GET: Returns a list of favorite movies from the user
+ * Request body: Bearer token
+ * @param Username
+ * @returns array of favorite movies in JSON format
+ * @requires passport
+ */
 app.get(
   '/users/:Username/movies', 
   passport.authenticate('jwt', { session: false }), 
@@ -327,6 +391,15 @@ app.get(
   }
 ); */
 
+
+/**
+ * DELETE: Allows users to remove a movie from their list of favorites
+ * Request body: Bearer token
+ * @param Username
+ * @param movieId
+ * @returns user object in JSON format
+ * @requires passport
+ */
 app.delete(
   '/users/:Username/movies/:MovieID', 
   passport.authenticate('jwt', { session: false }), 
@@ -343,7 +416,14 @@ app.delete(
       });
 });
 
-// DELETE, allows users to delete user account
+
+/**
+ * DELETE: Allows existing users to delete their account
+ * Request body: Bearer token
+ * @param Username
+ * @returns success message
+ * @requires passport
+ */
 app.delete(
   '/users/:Username',
   passport.authenticate('jwt', { session: false }),
@@ -363,13 +443,24 @@ app.delete(
   }
 );
 
-// Error-handling function
+/* ******* END OF ENDPOINT DEFINITION ******* 
+************************************************
+************************************************
+*/
+
+
+/**
+ * Error handler
+ */
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 
-// Listening function
+
+/**
+ * Port listening function
+ */
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
   console.log('Listening on Port ' + port);
