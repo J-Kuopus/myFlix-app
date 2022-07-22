@@ -305,7 +305,7 @@ app.get(
 });
 
 // DELETE, allows users to delete One Movie from their Favorites list
-app.delete(
+/* app.delete(
   '/users/:Username/movies/:MovieID',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
@@ -324,7 +324,23 @@ app.delete(
         res.status(500).send('Error: ' + err);
       });
   }
-);
+); */
+
+app.delete(
+  '/users/:Username/movies/:MovieID', 
+  passport.authenticate('jwt', { session: false }), 
+  (req, res) => {
+    Users.findOneAndUpdate({ Username: req.params.Username }, // Find user by username
+      { $pull: { FavoriteMovies: req.params.MovieID } }, // Remove movie from the list
+      { new: true }) // Return the updated document
+      .then((updatedUser) => {
+          res.json(updatedUser); // Return json object of updatedUser
+      })
+      .catch((err) => {
+          console.error(err);
+          res.status(500).send('Error: ' + err);
+      });
+});
 
 // DELETE, allows users to delete user account
 app.delete(
