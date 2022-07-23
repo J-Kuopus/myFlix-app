@@ -1,18 +1,19 @@
 // Imports Mongoose package
 const mongoose = require('mongoose');
 const Models = require('./models.js');
+
 // Imports Mongoose Models
 const Movies = Models.Movie;
 const Users = Models.User;
-// Imports fs node module
-/*const fs = require('fs');*/
 
 // Imports Express framework
 const express = require('express'),
-  // Imports Morgan library
-  morgan = require('morgan'),
-  // Imports body-parser
-  bodyParser = require('body-parser');
+
+// Imports Morgan library
+morgan = require('morgan'),
+
+// Imports body-parser
+bodyParser = require('body-parser');
 
 // Defines app variable that accesses Express functions
 const app = express();
@@ -77,20 +78,20 @@ mongoose.connect( process.env.CONNECTION_URI, {
 });
 
 /**
-* GET: Returns welcome message for '/' request URL
-* @returns Welcome message
-*/
+ * GET: Returns welcome message for '/' request URL
+ * @returns Welcome message
+ */
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
 
 
 /**
-* GET: Returns a list of ALL movies to the user
-* Request body: Bearer token
-* @returns array of movie objects in JSON format
-* @requires passport
-*/
+ * GET: Returns a list of ALL movies to the user
+ * Request body: Bearer token
+ * @returns array of movie objects in JSON format
+ * @requires passport
+ */
 app.get(
   '/movies',
   passport.authenticate('jwt', { session: false }),
@@ -108,12 +109,12 @@ app.get(
 
 
 /**
-* GET: Returns data about a single movie by title to the user
-* Request body: Bearer token
-* @param Title
-* @returns movie object in JSON format
-* @requires passport
-*/
+ * GET: Returns data about a single movie by title to the user
+ * Request body: Bearer token
+ * @param Title
+ * @returns movie object in JSON format
+ * @requires passport
+ */
 app.get(
   '/movies/:Title',
   passport.authenticate('jwt', { session: false }),
@@ -135,12 +136,12 @@ app.get(
 
 
 /**
-* GET: Returns data about movie genre (description) by name (e.g. "Horror")
-* Request body: Bearer token
-* @param Name (of genre)
-* @returns genre object in JSON format
-* @requires passport
-*/
+ * GET: Returns data about movie genre (description) by name (e.g. "Horror")
+ * Request body: Bearer token
+ * @param Name (of genre)
+ * @returns genre object in JSON format
+ * @requires passport
+ */
 app.get(
   '/genre/:Name',
   passport.authenticate('jwt', { session: false }),
@@ -162,12 +163,12 @@ app.get(
 
 
 /**
-* GET: Returns data about a director (bio, birth year, death year) by name
-* Request body: Bearer token
-* @param Name (of director)
-* @returns director object in JSON format
-* @requires passport
-*/
+ * GET: Returns data about a director (bio, birth year, death year) by name
+ * Request body: Bearer token
+ * @param Name (of director)
+ * @returns director object in JSON format
+ * @requires passport
+ */
 app.get(
   '/director/:Name',
   passport.authenticate('jwt', { session: false }),
@@ -189,10 +190,10 @@ app.get(
 
 
 /**
-* POST: Allows new users to register; Username, Password & Email are required fields
-* Request body: Bearer token, JSON with user information
-* @returns user object in JSON format
-*/
+ * POST: Allows new users to register; Username, Password & Email are required fields
+ * Request body: Bearer token, JSON with user information
+ * @returns user object in JSON format
+ */
 app.post('/users', 
 // Validation logic here for request
   [
@@ -239,12 +240,12 @@ app.post('/users',
 
 
 /**
-* PUT: Allow users to update their user info (find by username)
-* Request body: Bearer token, updated user info
-* @param Username
-* @returns user object with updates in JSON format
-* @requires passport
-*/
+ * PUT: Allow users to update their user info (find by username)
+ * Request body: Bearer token, updated user info
+ * @param Username
+ * @returns user object with updates in JSON format
+ * @requires passport
+ */
 app.put(
   '/users/:Username',
   [
@@ -290,12 +291,12 @@ app.put(
 
 
 /**
-* GET: Returns data on a single user by username
-* Request body: Bearer token
-* @param Username
-* @returns user object in JSON format
-* @requires passport
-*/
+ * GET: Returns data on a single user by username
+ * Request body: Bearer token
+ * @param Username
+ * @returns user object in JSON format
+ * @requires passport
+ */
 app.get('/users/:Username',  
   passport.authenticate('jwt', { session: false }), 
   (req, res) => {
@@ -311,13 +312,13 @@ app.get('/users/:Username',
 
 
 /**
-* POST: Allows users to add a movie to their list of favorites
-* Request body: Bearer token
-* @param username
-* @param movieId
-* @returns user object in JSON format
-* @requires passport
-*/
+ * POST: Allows users to add a movie to their list of favorites
+ * Request body: Bearer token
+ * @param username
+ * @param movieId
+ * @returns user object in JSON format
+ * @requires passport
+ */
 app.put(
   '/users/:Username/movies/:MovieID',
   passport.authenticate('jwt', { session: false }),
@@ -340,12 +341,12 @@ app.put(
 
 
 /**
-* GET: Returns a list of favorite movies from the user
-* Request body: Bearer token
-* @param Username
-* @returns array of favorite movies in JSON format
-* @requires passport
-*/
+ * GET: Returns a list of favorite movies from the user
+ * Request body: Bearer token
+ * @param Username
+ * @returns array of favorite movies in JSON format
+ * @requires passport
+ */
 app.get(
   '/users/:Username/movies', 
   passport.authenticate('jwt', { session: false }), 
@@ -366,13 +367,13 @@ app.get(
 
 
 /**
-* DELETE: Allows users to remove a movie from their list of favorites
-* Request body: Bearer token
-* @param Username
-* @param movieId
-* @returns user object in JSON format
-* @requires passport
-*/
+ * DELETE: Allows users to remove a movie from their list of favorites
+ * Request body: Bearer token
+ * @param Username
+ * @param movieId
+ * @returns user object in JSON format
+ * @requires passport
+ */
 app.delete(
   '/users/:Username/movies/:MovieID', 
   passport.authenticate('jwt', { session: false }), 
@@ -391,12 +392,12 @@ app.delete(
 
 
 /**
-* DELETE: Allows existing users to delete their account
-* Request body: Bearer token
-* @param Username
-* @returns success message
-* @requires passport
-*/
+ * DELETE: Allows existing users to delete their account
+ * Request body: Bearer token
+ * @param Username
+ * @returns success message
+ * @requires passport
+ */
 app.delete(
   '/users/:Username',
   passport.authenticate('jwt', { session: false }),
@@ -418,8 +419,8 @@ app.delete(
 
 
 /**
-* Error handler
-*/
+ * Error handler
+ */
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
@@ -427,8 +428,8 @@ app.use((err, req, res, next) => {
 
 
 /**
-* Port listening function
-*/
+ * Port listening function
+ */
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
   console.log('Listening on Port ' + port);
