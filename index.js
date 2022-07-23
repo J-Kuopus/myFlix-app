@@ -45,7 +45,7 @@ let allowedOrigins = ['http://localhost:8080',
                       'http://localhost:1234', 
                       'http://localhost:4200', 
                       'https://powerful-coast-48240.herokuapp.com/',
-                      'https://j-kuopus.github.io/myFlix-Angular-client/'];
+                      'https://j-kuopus.github.io'];
 
 app.use(cors({
   origin: (origin, callback) => {
