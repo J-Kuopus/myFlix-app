@@ -1,3 +1,6 @@
 # myFlix-app
 
-An API service that connects to MongoDB to fetch movie and user information.
+## Description
+A RESTful API service that utilizes CRUD methods to connect to MongoDB to fetch movie and user information.
+
+
