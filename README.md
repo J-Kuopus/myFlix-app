@@ -26,7 +26,7 @@ A RESTful API service that utilizes CRUD methods to connect to MongoDB to fetch 
 
 ## Dependencies
 
-- Packages and modules to be installed and imported:
+### Packages and modules to be installed and imported:
  - "bcrypt"
  - "body-parser"
  - "cors"
