@@ -5,7 +5,7 @@ A RESTful API service that utilizes CRUD methods to connect to MongoDB to fetch 
 
 ## Key Features
 
-- Returns a welcome page (endpoint: "/")
+- Returns a welcome page
 - Returns a movies page, displaying images of all movies in the database
 - Returns a single movie page with details (synopsis, director, genre, etc.)
 - Returns a director page with details about the director
