@@ -21,17 +21,6 @@ const app = express();
 // Imports express-validator library
 const { check, validationResult } = require('express-validator');
 
-// Creates write stream (in append mode)
-/*const accessLogStream = fs.createWriteStream(path.join('log.txt'), {
-  flags: 'a',
-});*/
-
-// Sets up logger
-/*app.use(morgan('combined', { stream: accessLogStream }));
-
-// Uses Morgan's logging methods
-app.use(morgan('common'));*/
-
 // Accesses all files in "public" folder
 app.use(express.static('public'));
 
@@ -66,12 +55,6 @@ let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
 
-// Connects Mongooose to database for CRUD operations
-/*mongoose.connect('mongodb://localhost:27017/myFlixDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});*/
-
 mongoose.connect( process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -79,6 +62,7 @@ mongoose.connect( process.env.CONNECTION_URI, {
 
 /**
  * GET: Returns welcome message for '/' request URL
+ * @param '/' endpoint
  * @returns Welcome message
  */
 app.get('/', (req, res) => {
@@ -89,6 +73,7 @@ app.get('/', (req, res) => {
 /**
  * GET: Returns a list of ALL movies to the user
  * Request body: Bearer token
+ * @param '/movies' endpoint
  * @returns array of movie objects in JSON format
  * @requires passport
  */
@@ -192,6 +177,7 @@ app.get(
 /**
  * POST: Allows new users to register; Username, Password & Email are required fields
  * Request body: Bearer token, JSON with user information
+ * @param '/users' endpoint
  * @returns user object in JSON format
  */
 app.post('/users', 
