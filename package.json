@@ -7,8 +7,9 @@
     "node": "16.14.2"
   },
   "scripts": {
-    "start": "node index.js", 
-    "dev": "nodemon server.js"
+    "start": "node index.js",
+    "dev": "nodemon server.js",
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "serve": "^13.0.2"
   },
   "devDependencies": {
+    "jsdoc": "^3.5.5",
     "nodemon": "^2.0.15"
   }
 }
