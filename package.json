@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon server.js",
-    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
+    "docs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
