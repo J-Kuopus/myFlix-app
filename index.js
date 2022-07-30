@@ -62,6 +62,7 @@ mongoose.connect( process.env.CONNECTION_URI, {
 
 /**
  * GET: Returns welcome message for '/' request URL
+ * @namespace mainPage
  * @param '/' endpoint
  * @returns Welcome message
  */
@@ -73,6 +74,7 @@ app.get('/', (req, res) => {
 /**
  * GET: Returns a list of ALL movies to the user
  * Request body: Bearer token
+ * @namespace moviesEndpoint
  * @param '/movies' endpoint
  * @returns array of movie objects in JSON format
  * @requires passport
