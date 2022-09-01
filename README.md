@@ -22,7 +22,7 @@ A RESTful API service that utilizes CRUD methods to connect to MongoDB to fetch 
 - MongoDB - for storing database data
 - Express - for creating api endpoint calls
 - Node.js - for installing and managing packages
-- Heroku - for creating API service that connects to MondoDB
+- Heroku - for creating API service that connects to MongoDB
 
 ## Dependencies
 
