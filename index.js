@@ -33,7 +33,8 @@ const cors = require('cors');
 
 let allowedOrigins = ['http://localhost:8080', 
                       'http://localhost:1234', 
-                      'http://localhost:4200', 
+                      'http://localhost:4200',
+                      'http://localhost:3000', 
                       'https://powerful-coast-48240.herokuapp.com/',
                       'https://j-kuopus.github.io'];
 
